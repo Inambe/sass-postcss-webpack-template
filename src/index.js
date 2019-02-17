@@ -1,2 +1,2 @@
-import './styles/main.sass';
+import './styles/index.sass';
 console.log("Its working!");

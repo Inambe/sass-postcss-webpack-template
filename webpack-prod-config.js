@@ -7,7 +7,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.s(c|a)ss$/,
+                test: /\.s?(c|a)ss$/,
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
                     {

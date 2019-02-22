@@ -1,13 +1,22 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
+    'mode': 'development',
     plugins: [
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        new CopyWebpackPlugin([
+            {from: "*.html"}
+        ])
     ],
+    devServer: {
+        contentBase: './dist',
+        writeToDisk: true
+    },
     module: {
         rules: [
             {
-                test: /\.s?(c|a)ss$/,
+                test: /\.(sa|c|sc)ss$/,
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
                     {
